@@ -1,0 +1,180 @@
+﻿/* Contact Section */
+.contact-section {
+    position: relative;
+    padding: 120px 0;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, #000000 100%);
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.contact-form-container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    padding: 40px;
+    overflow: hidden;
+}
+
+/* Floating Label Form Groups */
+.form-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.form-group.floating {
+    position: relative;
+}
+
+.form-control {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 1rem;
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 4px rgba(255, 23, 68, 0.1);
+}
+
+textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-group label {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus~label,
+.form-control:not(:placeholder-shown)~label {
+    top: -10px;
+    left: 16px;
+    font-size: 0.85rem;
+    padding: 0 4px;
+    color: var(--primary-color);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, #000000 100%);
+}
+
+.form-status {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.form-group.success .form-status::before {
+    content: '';
+    color: #00e676;
+}
+
+.form-group.error .form-status::before {
+    content: '';
+    color: #ff1744;
+}
+
+.form-group.success .form-control {
+    border-color: #00e676 !important;
+}
+
+.form-group.error .form-control {
+    border-color: #ff1744 !important;
+}
+
+/* Submit Button */
+.form-submit {
+    text-align: right;
+    margin-top: 40px;
+}
+
+.btn-submit {
+    padding: 16px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, #770303, #ff0000);
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px -10px rgba(255, 23, 68, 0.5);
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px -12px rgba(255, 23, 68, 0.7);
+}
+
+/* Success Message */
+.form-success-message {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+    z-index: 10;
+}
+
+.form-success-message.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.success-content {
+    text-align: center;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.form-success-message.show .success-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.success-icon {
+    font-size: 4rem;
+    color: #00e676;
+    margin-bottom: 20px;
+}
+
+.success-content h3 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.success-content p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 30px;
+}
