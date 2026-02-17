@@ -3,11 +3,20 @@
 import { useState } from "react";
 import Image from "next/image";
 
+interface PortfolioItem {
+  image: string;
+  badge: string;
+  title: string;
+  description: string;
+  stats: string[] | null;
+  link: string;
+  delay: string;
+}
+
 export default function PortfolioSection() {
   const [showAll, setShowAll] = useState(false);
 
-  const portfolioItems = [
-    // ... items stay the same ...
+  const portfolioItems: PortfolioItem[] = [
     {
       image: "/images/portfolio/2.png",
       badge: "SaaS",
@@ -121,9 +130,9 @@ export default function PortfolioSection() {
                   <div className="client-badge">{item.badge}</div>
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
-                  {item.stats && (
+                  {Array.isArray(item.stats) && (
                     <div className="portfolio-stats">
-                      {item?.stats?.map((stat, i) => (
+                      {item.stats.map((stat, i) => (
                         <span key={i} className="stat">
                           {stat}
                         </span>
