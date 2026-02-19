@@ -63,9 +63,9 @@ export default function Navigation() {
           </ul>
           <div className="contact-social">
             <div className="social-links">
-              <a href="#" className="social-link"><i className="fab fa-github"></i></a>
-              <a href="#" className="social-link"><i className="fab fa-linkedin"></i></a>
-              <a href="#" className="social-link"><i className="fab fa-x"></i></a>
+              <a href="https://github.com/shkTalha33" className="social-link"><i className="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/muhammad-talha-772085392/" className="social-link"><i className="fab fa-linkedin"></i></a>
+              <a href="https://x.com/talha_shk_x" className="social-link"><i className="fab fa-x"></i></a>
             </div>
           </div>
         </div>
